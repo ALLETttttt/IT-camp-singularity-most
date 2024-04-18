@@ -131,7 +131,7 @@ public class App
     }
 
     public static void taskSeven(int[] arr, int n) {
-        if (n >= arr.length) {
+        if (n == arr.length) {
             System.out.println(Arrays.toString(arr));
             return;
         }
