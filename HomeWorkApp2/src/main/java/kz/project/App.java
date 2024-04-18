@@ -1,6 +1,7 @@
 package kz.project;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 /**
  * Hello world!
@@ -29,6 +30,13 @@ public class App
         System.out.println(taskSix(arr));
         int[] ar = {1, 1, 1, 2, 1};
         System.out.println(taskSix(ar));
+        System.out.println();
+
+        int[] arrr = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter how many times you want to shift your array: ");
+        int n = input.nextInt();
+        taskSeven(arrr, n);
     }
 
     public static void taskOne() {
@@ -120,5 +128,21 @@ public class App
             }
         }
         return false;
+    }
+
+    public static void taskSeven(int[] arr, int n) {
+        if (n >= arr.length) {
+            System.out.println(Arrays.toString(arr));
+            return;
+        }
+        n %= arr.length;
+        for (int i = 0; i < n; i++) {
+            int element = arr[i];
+            for (int j = 0; j < arr.length-1; j++) {
+                arr[j] = arr[j+1];
+            }
+            arr[arr.length-1] = element;
+        }
+        System.out.println(Arrays.toString(arr));
     }
 }
