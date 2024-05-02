@@ -54,35 +54,14 @@ public class App
     }
 
     public static boolean isWinner() {
-        if (map[0][0] != DOT_EMPTY && map[0][0] == map[0][1] && map[0][0] == map[0][2]) {
-            return true;
+        for (int i = 0; i < SIZE; i++) {
+            if ((map[i][0] != DOT_EMPTY && map[i][1] != DOT_EMPTY && map[i][2] != DOT_EMPTY) ||
+                    (map[0][i] != DOT_EMPTY && map[1][i] != DOT_EMPTY && map[2][i] != DOT_EMPTY)) {
+                return true;
+            }
         }
-        if (map[1][0] != DOT_EMPTY && map[1][0] == map[1][1] && map[1][0] == map[1][2]) {
-            return true;
-        }
-        if (map[2][0] != DOT_EMPTY && map[2][0] == map[2][1] && map[2][0] == map[2][2]) {
-            return true;
-        }
-
-        if (map[0][0] != DOT_EMPTY && map[0][0] == map[1][0] && map[0][0] == map[2][0]) {
-            return true;
-        }
-        if (map[0][1] != DOT_EMPTY && map[0][1] == map[1][1] && map[0][1] == map[2][1]) {
-            return true;
-        }
-        if (map[0][2] != DOT_EMPTY && map[0][2] == map[1][2] && map[0][2] == map[2][2]) {
-            return true;
-        }
-
-        if (map[0][0] != DOT_EMPTY && map[0][0] == map[1][1] && map[0][0] == map[2][2]) {
-            return true;
-        }
-        if (map[0][2] != DOT_EMPTY && map[0][2] == map[1][1] && map[0][2] == map[2][0]) {
-            return true;
-        }
-
-
-        return false;
+        return (map[0][0] != DOT_EMPTY && map[1][1] != DOT_EMPTY && map[2][2] != DOT_EMPTY) ||
+                (map[0][2] != DOT_EMPTY && map[1][1] != DOT_EMPTY && map[2][0] != DOT_EMPTY);
     }
 
 
@@ -125,7 +104,7 @@ public class App
     }
 
     public static void showMap(){
-        for(int i = 0; i<= SIZE; i++){
+        for(int i = 0; i <= SIZE; i++){
             System.out.print(i+" ");
         }
         System.out.println(" ");
