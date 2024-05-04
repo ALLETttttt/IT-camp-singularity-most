@@ -12,8 +12,14 @@ public class Cat {
     }
 
     public void eat(Plate p) {
-        p.decreaseFood(appetite);
-        hungry = false;
+        if (p.getFood() >= appetite) {
+            p.decreaseFood(appetite);
+            hungry = false;
+            System.out.println("Cat eat the food");
+        }
+        else {
+            System.out.println("Not enough food");
+        }
     }
 
     public int getAppetite() {
