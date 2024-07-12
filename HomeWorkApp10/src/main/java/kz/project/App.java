@@ -13,5 +13,14 @@ public class App
         ll.add(2);
         ll.add(6767);
         ll.print();
+        System.out.println();
+        ll.addAtIndex(234, 2);
+        ll.print();
+        System.out.println();
+        ll.remove(2);
+        ll.print();
+        ll.removerFirst();
+        System.out.println();
+        ll.print();
     }
 }
